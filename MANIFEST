@@ -1,0 +1,9 @@
+Changes
+Makefile.PL
+README
+MANIFEST
+Simplified.pm
+Simplified.xs
+chinsimp.map
+mkheader
+t/test.t
