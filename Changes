@@ -1,4 +1,8 @@
 Revision history for Perl module Lingua::ZH::MacChinese::Simplified.
 
+0.02  Sat Oct 25 20:31:57 2003
+    - added old mapping for 0xA8BF to the equivalent decomposition sequence
+      in the direction from Unicode to the Mac OS encoding.
+
 0.01  Sun Sep 28 10:48:36 2003
     - original version;

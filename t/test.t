@@ -1,5 +1,5 @@
 
-BEGIN { $| = 1; print "1..31\n"; }
+BEGIN { $| = 1; print "1..32\n"; }
 END {print "not ok 1\n" unless $loaded;}
 
 use Lingua::ZH::MacChinese::Simplified;
@@ -87,6 +87,9 @@ print "\x{FF0C}\x{F87E}" eq decodeMacChineseSimp("\xA6\xD9")
    ? "ok" : "not ok", " ", ++$loaded, "\n";
 
 print "\xA8\xBF" eq encodeMacChineseSimp("\x{01F9}")
+   ? "ok" : "not ok", " ", ++$loaded, "\n";
+
+print "\xA8\xBF" eq encodeMacChineseSimp("n\x{300}")
    ? "ok" : "not ok", " ", ++$loaded, "\n";
 
 print "\x{01F9}" eq decodeMacChineseSimp("\xA8\xBF")

@@ -11,7 +11,6 @@
 #define ToMbTbl 	to_maccns
 #define ToMbTblC	to_maccns_contra
 
-#define IsMbSGL(i)   (0x00<=(i) && (i)<=0xA0 || 0xFD<=(i) && (i)<=0xFF)
 #define IsMbLED(i)   (0xA1<=(i) && (i)<=0xFC)
 #define IsMbTRL(i)   (0xA1<=(i) && (i)<=0xFE)
 
@@ -86,7 +85,8 @@ decode(...)
     SvUTF8_on(dst);
 
     for (p = s; p < e; p += mblen) {
-	mblen = IsMbSGL(*p) ? 1 : IsMbLED(*p) && IsMbTRL(p[1]) ? 2 : 1;
+	mblen = 2 <= (e - p) && IsMbLED(*p) && IsMbTRL(p[1]) ? 2 : 1;
+
 	lb = FromMbTbl[mblen == 2 ? *p : 0];
 	tb = lb ? lb[mblen == 2 ? p[1] : *p] : NULL;
 
