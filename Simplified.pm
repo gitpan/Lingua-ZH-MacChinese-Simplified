@@ -8,7 +8,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 require Exporter;
 require DynaLoader;
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 @ISA = qw(Exporter DynaLoader);
 @EXPORT = qw(decodeMacChineseSimp encodeMacChineseSimp);
 @EXPORT_OK = qw(decode encode);
@@ -20,7 +20,7 @@ __END__
 =head1 NAME
 
 Lingua::ZH::MacChinese::Simplified - transcoding between Mac OS Chinese
-Simplified and Unicode
+Simplified encoding and Unicode
 
 =head1 SYNOPSIS
 
@@ -43,7 +43,7 @@ Simplified and Unicode
     $octet = Lingua::ZH::MacChinese::Simplified::encode($wchar);
 
    # $wchar : a string in Perl's Unicode format
-   # $octet : a string in Mac OS Chinese Simplified
+   # $octet : a string in Mac OS Chinese Simplified encoding
 
 =head1 DESCRIPTION
 
@@ -53,12 +53,11 @@ Mac OS Chinese Simplified encoding (denoted MacChineseSimp hereafter).
 In order to ensure roundtrip mapping, MacChineseSimp encoding
 has some characters with mapping from a single MacChineseSimp character
 to a sequence of Unicode characters and vice versa.
-Such characters includes C<0xA6D9> (MacChineseSimp) from/to
+Such characters include C<0xA6D9> (MacChineseSimp) from/to
 C<0xFF0C+0xF87E> (Unicode) for C<"FULLWIDTH COMMA for vertical text">.
 
-This module provides functions to transcode between MacChineseSimp
-encoding and Unicode, without information loss
-for every MacChineseSimp character.
+This module provides functions to transcode between MacChineseSimp and
+Unicode, without information loss for every MacChineseSimp character.
 
 =head2 Functions
 
@@ -137,26 +136,24 @@ Please let him know if you find something wrong.
 
 =head1 AUTHOR
 
-  SADAHIRO Tomoyuki  SADAHIRO@cpan.org
+SADAHIRO Tomoyuki <SADAHIRO@cpan.org>
 
-  http://homepage1.nifty.com/nomenclator/perl/
+Copyright(C) 2003-2005, SADAHIRO Tomoyuki. Japan. All rights reserved.
 
-  Copyright(C) 2003-2003, SADAHIRO Tomoyuki. Japan. All rights reserved.
-
-This module is free software; you can redistribute it
-and/or modify it under the same terms as Perl itself.
+This module is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
 =over 4
 
 =item Map (external version) from Mac OS Chinese Simplified encoding
-to Unicode 3.0 through Unicode 3.2 (version: b3,c1 2002-Dec-19)
+to Unicode 3.0 and later (version: c02 2005-Apr-04)
 
 L<http://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/CHINSIMP.TXT>
 
 =item Registry (external version) of Apple use of Unicode corporate-zone
-characters (version: b4,c1 2002-Dec-19)
+characters (version: c03 2005-Apr-04)
 
 L<http://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/CORPCHAR.TXT>
 

@@ -1,10 +1,12 @@
 Changes
 Makefile.PL
-README
 MANIFEST
+META.yml
+README
 Simplified.pm
 Simplified.xs
 addition.map
 chinsimp.map
 mkheader
+t/argu.t
 t/test.t
