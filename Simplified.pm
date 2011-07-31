@@ -3,15 +3,14 @@ package Lingua::ZH::MacChinese::Simplified;
 require 5.006001;
 
 use strict;
-use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 
 require Exporter;
 require DynaLoader;
 
-$VERSION = '0.04';
-@ISA = qw(Exporter DynaLoader);
-@EXPORT = qw(decodeMacChineseSimp encodeMacChineseSimp);
-@EXPORT_OK = qw(decode encode);
+our $VERSION = '0.20';
+our @ISA = qw(Exporter DynaLoader);
+our @EXPORT = qw(decodeMacChineseSimp encodeMacChineseSimp);
+our @EXPORT_OK = qw(decode encode);
 
 bootstrap Lingua::ZH::MacChinese::Simplified $VERSION;
 1;
